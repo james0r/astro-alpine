@@ -17,5 +17,8 @@
     "alpinejs": "^3.13.3",
     "astro": "^4.0.8",
     "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/alpinejs__collapse": "^3.13.4"
   }
 }
