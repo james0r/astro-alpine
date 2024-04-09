@@ -1,0 +1,22 @@
+---
+import Layout from '../layout/Default.astro'
+---
+
+<script>
+  import Alpine from 'alpinejs'
+
+  Alpine.data('expanderPage4', () => ({
+    expanded: false
+  }))
+</script>
+
+<Layout>
+  <section>
+    <div x-data="expanderPage4">
+      <button @click="expanded = ! expanded">Toggle Content</button>
+
+      <p id="foo" x-show="expanded" x-collapse>Lorem ipsum</p>
+    </div>
+    <a href="/page3">Page3</a>
+  </section>
+</Layout>
