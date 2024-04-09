@@ -1,0 +1,17 @@
+---
+import { ViewTransitions } from "astro:transitions";
+---
+
+<html>
+  <head>
+    <ViewTransitions />
+  </head>
+  <body>
+    <div x-data="{ expanded: false }">
+      <button @click="expanded = ! expanded">Toggle Content</button>
+
+      <p id="foo" x-show="expanded" x-collapse>Lorem ipsum</p>
+    </div>
+    <a href="/">home</a>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+---
+import { ViewTransitions } from "astro:transitions";
+---
+
+<html>
+  <head>
+    <ViewTransitions />
+    <script>
+      import Alpine from "alpinejs";
+      import { collapse } from "@alpinejs/collapse";
+      Alpine.plugin(collapse);
+      Alpine.start();
+    </script>
+  </head>
+  <body>
+    <!-- ... -->
+    <div x-data="{ expanded: false }">
+      <button @click="expanded = ! expanded">Toggle Content</button>
+
+      <p id="foo" x-show="expanded" x-collapse>Lorem ipsum</p>
+    </div>
+    <a href="/page2">page2</a>
+  </body>
+</html>
