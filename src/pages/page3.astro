@@ -2,14 +2,6 @@
 import Layout from '../layout/Default.astro'
 ---
 
-<script>
-  import Alpine from 'alpinejs'
-
-  Alpine.data('expanderPage3', () => ({
-    expanded: false
-  }))
-</script>
-
 <Layout>
   <section>
     <div x-data="expanderPage3">
@@ -19,4 +11,14 @@ import Layout from '../layout/Default.astro'
     </div>
     <a href="/page4">Page4</a>
   </section>
+  <script is:inline data-astro-rerun>
+    (() => {
+      console.log('ran')
+      document.addEventListener('alpine:init', () => {
+        Alpine.data('expanderPage3', () => ({
+          expanded: false,
+        }))
+      })
+    })()
+  </script>
 </Layout>

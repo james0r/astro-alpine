@@ -6,18 +6,17 @@ import { ViewTransitions } from 'astro:transitions'
   <head>
     <title>Astro Alpine</title>
     <ViewTransitions />
-    <script>
-      import Alpine from 'alpinejs';
-      import collapse from "@alpinejs/collapse";
-      Alpine.plugin(collapse);
-
-      window.Alpine = Alpine;
-    </script>
   </head>
   <body>
     <slot />
-    <script is:inline type="module">
-      window.Alpine.start();
+    <script>
+      import Alpine from "alpinejs";
+      import collapse from '@alpinejs/collapse'
+
+      Alpine.plugin(collapse)
+
+      window.Alpine = Alpine
+      Alpine.start()
     </script>
   </body>
 </html>
